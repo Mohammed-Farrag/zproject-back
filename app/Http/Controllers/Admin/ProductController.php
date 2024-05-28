@@ -62,8 +62,9 @@ class ProductController extends Controller{
         $product->category_id = $req->category_id;
         $product->image_id = 1;
         $image = $req->file('image');
-        $image->move(public_path('products'), $image->getClientOriginalName());
-        $path = url('/products/' .  $image->getClientOriginalName() );
+        $img =  uniqid() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('products'), $img);
+        $path = url('/products/' . $img);
        
     
         $product->image = $path;

@@ -9,11 +9,14 @@ use App\Http\Controllers\Admin\ReviewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
+
+require 'frontend.php';
+
 Route::get('/',function() {
  
    Artisan::call('storage:link');
    
-   view('app');
+   return view('app');
 });
 
 
