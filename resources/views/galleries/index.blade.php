@@ -11,7 +11,7 @@
 
         <a href="{{ route('galleries.show', ['id' => $gallery->id ] ) }}" class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
-                <span class="info-box-icon bg-info"><img src="{{ $gallery->thumbnail}}" /></span>
+                <span class="info-box-icon bg-info"><img src="{{ $gallery->thumbnail}} " /></span>
                 <div class="info-box-content text-right">
                     <span class="info-box-number">{{ $gallery->title}} </span>
                 </div>

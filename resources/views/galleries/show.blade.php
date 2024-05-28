@@ -5,8 +5,6 @@
     @if (Session::has('success'))
     <span class="text-success"> {{ Session::get('success') }}</span>
     @endif
-    <a href="{{ route('galleries.delete', ['id' => $gallery->id ]) }}" class="btn btn-primary">delete gallery</a>
-
     <div class="row mb-3">
         <div class="col-sm-6">
             <img class="img-fluid" src="{{  $gallery->thumbnail}}" alt="Photo">
@@ -21,6 +19,10 @@
             </div>
         </div>
     </div>
+
+    <a href="{{ route('galleries.delete', ['id' => $gallery->id ]) }}" class="btn btn-primary">delete gallery</a>
+    <a href="{{ route('galleries.edit', ['id' => $gallery->id ]) }}" class="btn btn-info">edit gallery</a>
+
 </div>
 
 @endsection

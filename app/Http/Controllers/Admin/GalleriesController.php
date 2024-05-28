@@ -34,6 +34,12 @@ class GalleriesController extends Controller
 
 
 
+    public function edit(Request $req){
+        $gallery = Gallery::find($req->query('id'));
+        
+        return view('galleries.update', compact('gallery'));
+    }
+
     public function store(Request $req){
 
 

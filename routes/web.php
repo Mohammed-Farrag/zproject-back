@@ -39,6 +39,7 @@ Route::prefix('/dashboard')->group(function () {
             Route::get('/show', [GalleriesController::class, 'show'])->name('galleries.show');
             Route::view('/create', 'galleries.create')->name('galleries.create');
             Route::post('/store', [GalleriesController::class, 'store'])->name('galleries.store');
+            Route::get('/edit',  [GalleriesController::class, 'edit'])->name('galleries.edit');
             Route::view('/update', 'galleries.update')->name('galleries.update');
             Route::get('/delete', [GalleriesController::class, 'delete'])->name('galleries.delete');
         });
