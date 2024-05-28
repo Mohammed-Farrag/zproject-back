@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,10 @@ Route::middleware('withCors')->group(function() {
     Route::prefix('/product')->group( function() {
         Route::get('/', [ProductController::class, 'index']);
         Route::get('/{id}', [ProductController::class, 'show']);
+    });
+    Route::prefix('/review')->group( function() {
+        Route::get('/', [ReviewsController::class, 'index']);
+        Route::post('/', [ReviewsController::class, 'store']);
     });
 
     

@@ -94,16 +94,16 @@
                                     Store
                                 </p>
                             </a>
-                        </li>
+                        <!-- </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
                                     Users
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('reviews.index') }}" class="nav-link">
                                 <p>
                                     Reviews
                                 </p>

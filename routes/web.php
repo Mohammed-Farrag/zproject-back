@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\GalleriesController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ReviewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -49,6 +50,11 @@ Route::prefix('/dashboard')->group(function () {
             Route::post('/store', [ProductController::class, 'store'])->name('products.store');
             Route::get('/delete', [ProductController::class, 'delete'])->name('products.delete');
             Route::view('/update', 'products.update')->name('products.update');
+        });
+
+        Route::prefix('/reviews')->group(function () {
+            Route::get('/', [ReviewsController::class, 'index'])->name('reviews.index');
+            Route::get('/delete', [ReviewsController::class, 'delete'])->name('reviews.delete');
         });
 
         Route::prefix('/categories')->group(function () {

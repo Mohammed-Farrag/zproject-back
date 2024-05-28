@@ -1,27 +1,39 @@
 @extends('layouts.auth')
 
 @section('content')
+
 <div class="container-fluid">
     @if (Session::has('success'))
-        <span class="text-success"> {{ Session::get('success') }}</span>
+    <span class="text-success"> {{ Session::get('success') }}</span>
     @endif
-    <a href="{{ route('products.create') }}" class="btn btn-primary">create product</a>
-    <div class="row mt-5">
+    <div class="row mt-5 w-100">
+        <div class="card w-100">
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Ratinf</th>
+                            <th>Comment</th>
+                            <th>User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        @foreach ($products as $product )
-        <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-info"><img src="{{ url('/') . '/' . $product->image->path}}" /></span>
-                <div class="info-box-content text-right">
-                    <span class="info-box-text">{{ $product->title}}</span>
-                    <span class="info-box-number">1,410</span>
-                </div>
+                        @foreach ($revs as $rev )
+                        <tr>
+                            <td>{{ $rev->rating }} </td>
+                            <td>{{ $rev->comment }} </td>
+                            <td>{{ $rev->user->name }} </td>
+        
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-    
-        @endforeach
 
     </div>
 </div>
+
 
 @endsection
