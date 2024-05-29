@@ -52,7 +52,7 @@ class AdminController extends Controller
         if ($admin) {
             if (Hash::check($req->password, $admin->password)) {
                 $req->session()->put('adminId', $admin->id);
-                return redirect('dashboard');
+                return redirect('admin');
             } else {
 
                 return back()->with('fail', 'This Password not matches');
@@ -84,7 +84,7 @@ class AdminController extends Controller
             Session::pull('adminId');
             Session::pull('adminData');
 
-            return redirect('/dashboard/login');
+            return redirect('/admin/login');
         }
     }
 }

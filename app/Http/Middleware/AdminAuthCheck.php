@@ -16,7 +16,7 @@ class AdminAuthCheck
     public function handle(Request $request, Closure $next): Response
     {
         if(!Session()->has('adminId')){
-            return redirect('/dashboard/login')->with('fail', 'You must login first');
+            return redirect('/admin/login')->with('fail', 'You must login first');
         }
         return $next($request);
     }

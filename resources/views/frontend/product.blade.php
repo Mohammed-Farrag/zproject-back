@@ -83,11 +83,11 @@
     <!-- Start photmaylike -->
     <section class="photmaylike">
         <div class="container">
-            <h4>You may also like</h4>
+            <h4>You may also like</h4> 
             <div class="row">
                 @foreach ($products as $p)
                     <!-- start product -->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
+                    <a href="{{ route('home.product', $product->id) }}" class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
                         <div class="mainproduct">
                             <div class="upimage">
                                 <img src="{{ asset($p->image) }}" alt="image">
@@ -99,7 +99,7 @@
                                 <span class="carticon"><i class="fa-solid fa-cart-plus"></i></span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- End product -->
                 @endforeach
             </div>
