@@ -68,50 +68,10 @@
     <img class="animation-shap lifeshap02" src="{{ asset('frontend/img/lifeshap.png') }}" alt="img">
     <div class="container">
         <img class="animation-shap squardots" src="{{ asset('frontend/img/squardots.png') }}" alt="img">
-        <ul class="itemsproducts">
-            @foreach ($categories as $category)
-            <?php
-            $itactive = 1;
-            $activeClass = ($category->id ===  $itactive) ? 'itactive' : '';
-            ?>
-            <li class="catitem  {{ $activeClass }}" onclick="changeCat('{{ $category->slug }}', '{{ $category->title }}')" id="{{ $category->slug }}">{{ $category->title }}</li>
-            @endforeach
-        </ul>
-        <div class="upmainproducts">
-            <div class="row">
-                @foreach ($products as $product)
-                <!-- start product -->
-                <a href="{{ route('home.product', $product->id) }}" class="col-lg-4 col-md-4 col-sm-6 col-12 {{ $product->category->id == $itactive ? '' : 'd-none'  }}" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
-                    <div class="mainproduct">
-                        <div class="upimage">
-                            <img src="{{ asset($product->image) }}" alt="image">
-                            <span><i class="fa-regular fa-file-image"></i></span>
-                        </div>
-                        <div class="productdetails">
-                            <h5>{{ $product->title }}</h5>
-                            <span class="prodprice">{{ $product->price }}$</span>
-                            <span class="carticon"><i class="fa-solid fa-cart-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-                <!-- End product -->
-                @endforeach
-
-            </div>
-        </div>
+        
+       
+        @livewire('product-listing');
     </div>
 </section>
 <!-- End photstoreproducts -->
-<script>
-    function changeCat(slug) {
-        // Remove the 'itactive' class from the currently active item
-        $('.catitem.itactive').removeClass('itactive');
-
-        // Add the 'itactive' class to the clicked item
-        $('#' + slug).addClass('itactive');
-
-        // Additional actions can be performed here
-        console.log('Active Category Slug:', slug);
-    }
-</script>
 @endsection
