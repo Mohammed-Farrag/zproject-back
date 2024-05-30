@@ -1,46 +1,9 @@
 @extends('frontend.layout.app')
 
 @section('content')
-    <!-- Start photproductpart -->
-    <section class="photproductpart">
-        <div class="container">
-            <div class="row">
-                <div class="col-md col-sm-12 col-12" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <div class="product-image">
-                        <img src="{{ asset($product->image) }}" alt="image">
-                    </div>
-                </div>
-                <div class="col-md col-sm-12 col-12" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <div class="product-details">
-                        <h4>{{ $product->title }}<span><i class="fa-solid fa-arrow-up-from-bracket"></i></span></h4>
-                        <div class="prdpricing">
-                            <span>{{ $product->price }}$</span>
-                            <p>{{ $product->description }}</p>
-                        </div>
-                        <div class="prdsize">
-                            <h6>Paper Size</h6>
-                            <div>
-                                <span>A0</span>
-                                <span class="active">A1</span>
-                                <span>A2</span>
-                            </div>
-                            <p>A1 (841mm x 594mm) - 151$ - limited to 5 editions</p>
-                        </div>
-                        <div class="prdcount">
-                            <h6>Quantity</h6>
-                            <div>
-                                <span>-</span>
-                                <span>1</span>
-                                <span>+</span>
-                            </div>
-                        </div>
-                        <div class="prdaddcard"><button type="button">ADD TO CART</button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End photproductpart -->
+
+
+    @livewire('single-product', ['productId' => $product->id ])
 
     <!-- Start photaddreview -->
     <section class="photaddreview">

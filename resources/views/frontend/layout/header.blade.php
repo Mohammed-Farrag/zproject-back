@@ -8,6 +8,8 @@
     <title>Sunlit Photography | Store</title>
     <link rel="stylesheet" href="{{ asset('frontend/css/normalize.css') }}" />
 
+    <!-- for JQuery Toaster  -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/jquery.toast.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css.map') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
