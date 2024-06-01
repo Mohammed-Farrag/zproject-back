@@ -10,30 +10,7 @@
         <div class="container">
             <h3>ADD A REVIEW <span class="animation-shap productshp1"><img src="{{ asset('frontend/img/product-shp1.png') }}"></span></h3>
             <div class="row">
-                <div class="col-md" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <form>
-                        <div>
-                            <input type="text" name="" placeholder="Your Name">
-                        </div>
-                        <div>
-                            <input type="email" name="" placeholder="Your Email">
-                        </div>
-                        <div>
-                            <textarea name="" placeholder="Your Comment" rows="6"></textarea>
-                        </div>
-                        <div class="ratestars">
-                            <span>YOUR RATE:</span>
-                            <span><i class="fa-regular fa-star"></i></span>
-                            <span><i class="fa-regular fa-star"></i></span>
-                            <span><i class="fa-regular fa-star"></i></span>
-                            <span><i class="fa-regular fa-star"></i></span>
-                            <span><i class="fa-regular fa-star"></i></span>
-                        </div>
-                        <div>
-                            <input type="submit" name="SEND" value="SEND">
-                        </div>
-                    </form>
-                </div>
+               @livewire('review', ['productId' => $product->id ])
                 <div class="col-md" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                     <img class="reviewimg" src="{{ asset('frontend/img/review-img.png') }}" alt="image">
                     <span class="animation-shap abshp3"><img src="{{ asset('frontend/img/about-shp3.png') }}" alt="shap"></span>

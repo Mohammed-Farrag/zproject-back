@@ -7,7 +7,7 @@ Route::view('home', 'frontend.index')->name('home');
 // Route::view('home/store', 'frontend.store')->name('home.store');
 Route::view('home/about', 'frontend.about')->name('home.about');
 Route::get('home/gallery', [FrontendController::class, 'gallery'])->name('home.gallery');
-Route::view('home/news', 'frontend.news')->name('home.news');
+Route::get('home/news', [FrontendController::class, 'news'])->name('home.news');
 Route::get('home/products', [FrontendController::class, 'print_store'])->name('home.store');
 Route::view('home/contact', 'frontend.contact')->name('home.contact');
 Route::view('home/cart', 'frontend.cart')->name('home.cart');

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('new_models', function (Blueprint $table) {
-            $table->integer('days');
-            $table->integer('hours');
-            $table->integer('minutes');
-            $table->integer('seconds');
+        Schema::table('reviews', function(Blueprint $table) {
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -24,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('news_tsble', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

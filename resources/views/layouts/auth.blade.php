@@ -109,13 +109,13 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
                                     Orders
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <a class="mt-auto w-100 d-block mt-auto" href="{{route('logout')  }}">logout</a>

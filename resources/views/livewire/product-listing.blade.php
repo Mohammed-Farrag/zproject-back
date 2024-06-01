@@ -9,9 +9,6 @@
 
     </ul>
 
-
-
-
     <!-- loading  -->
 
     <div wire:loading wire:target="changeCategory" style="width: 100%; margin: auto">

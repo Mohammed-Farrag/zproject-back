@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Gallery;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\NewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
@@ -16,6 +17,15 @@ class FrontendController extends Controller
     {
         $galleries = Gallery::with('images')->get();
         return view('frontend.gallery', ['galleries' => $galleries]);
+    }
+
+
+    public function news()
+    {
+        $news = NewModel::with('category')->get();
+        $categories = Category::all();
+        $itactive = 1;
+        return view('frontend.news', ['categories' => $categories, 'news' => $news,  'itactive' => $itactive]);
     }
 
     public function print_store()
@@ -67,10 +77,11 @@ class FrontendController extends Controller
         return back();
     }
 
-    public function product($id) {
+    public function product($id)
+    {
         $product = Product::find($id);
         $products = Product::where('id', '!=', $id)->get();
 
-        return view ('frontend.product', ['product' => $product, 'products' => $products]);
+        return view('frontend.product', ['product' => $product, 'products' => $products]);
     }
 }

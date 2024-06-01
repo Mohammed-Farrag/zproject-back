@@ -15,6 +15,7 @@
                             <th>Title</th>
                             <th>Time</th>
                             <th>Image</th>
+                            <th>Category</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -22,16 +23,15 @@
 
                         @foreach ($news as $new )
                         <tr>
-                            <td>{{ $new->title }} </td>
+                            <td>{{ $new->slug }} </td>
+                            <td>{{ $new->soon }} </td>
+                            
                             <td>
-                                <p>  Days: {{ $new->days }}   </p>
-                                <p>  Hours: {{ $new->hours }}   </p>
-                                <p>  Min: {{ $new->minutes }}   </p>
-                                <p>  Sec: {{ $new->seconds }}   </p>
+                                <img 
+                                class="img-fluid mb-3" 
+                                style="width:150px" src="{{ $new->image }}" alt="Photo">
                             </td>
-                            <td>
-                                <img class="img-fluid mb-3" style="width:150px" src="{{asset('storage') . '/'  . $new->image}}" alt="Photo">
-                            </td>
+                            <td>{{ $new->category->title }} </td>
                             <td>
                             <a href="{{ route('news.delete' , ['id' => $new->id]) }}" class="btn btn-primary">Delete</a>
                             </td>

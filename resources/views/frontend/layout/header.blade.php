@@ -67,7 +67,7 @@
                             </span>
                         </a>
                         @else
-                        <a href="{{ route('home.signup') }}"><span><i class="fa-solid fa-user"></i></span></a>
+                        <a href="{{ route('home.signin') }}"><span><i class="fa-solid fa-user"></i></span></a>
                         @endauth
                     </div>
                 </div>

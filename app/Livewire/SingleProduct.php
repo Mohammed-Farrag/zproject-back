@@ -23,6 +23,7 @@ class SingleProduct extends Component
         $this->product = Product::find($productId);
         $this->selectedSize = $this->product->size;
     }
+   
     public function selectSize($size)
     {
         $this->selectedSize = $size;
