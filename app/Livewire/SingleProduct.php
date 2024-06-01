@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class SingleProduct extends Component
@@ -31,15 +32,17 @@ class SingleProduct extends Component
         $this->selectedQuantity = $quantity;
     }
 
-    public function inc(){
+    public function inc()
+    {
         $this->selectedQuantity++;
     }
 
-    public function dec(){
-        if($this->selectedQuantity  > 1 ){
+    public function dec()
+    {
+        if ($this->selectedQuantity  > 1) {
 
             $this->selectedQuantity--;
-        }else {
+        } else {
             $this->selectedQuantity = 1;
         }
     }
@@ -49,7 +52,7 @@ class SingleProduct extends Component
 
     public function addToCart()
     {
-        
+
         $product = [
             'id' => $this->product->id,
             'title' => $this->product->title,
@@ -61,7 +64,20 @@ class SingleProduct extends Component
             'image' => $this->product->image
         ];
 
-        $this->dispatch('productAddedToCart', $product);
+        $user_data = Auth::user();
+
+
+        if (Auth::check()) {
+            $this->dispatch(
+                'productAddedToCart',
+                [
+                    'product' => $product,
+                    'user_data' => $user_data
+                ]
+            );
+        } else {
+            $this->dispatch('NoAuthAlert');
+        }
     }
 
     public function render()

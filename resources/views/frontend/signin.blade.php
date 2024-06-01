@@ -45,14 +45,14 @@
                 @csrf
                 <div class="row">
                   <div class="col-12"><label>E-mail</label></div>
-                  <div class="col-sm col-12"><input type="email" name="email" placeholder="E-mail"></div>
+                  <div class="col-sm col-12"><input type="email" name="email"  value="{{ old('email') }}" placeholder="E-mail"></div>
                   @error('email')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="row">
                   <div class="col-12"><label>Password</label></div>
-                  <div class="col-12"><input type="password" name="password" placeholder="Password"></div>
+                  <div class="col-12"><input type="password" name="password" value="{{ old('password') }}" placeholder="Password"></div>
                   @error('password')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror

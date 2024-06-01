@@ -45,7 +45,7 @@
                 @csrf
                 <div class="row">
                   <div class="col-12"><label>User Name</label></div>
-                  <div class="col-sm col-12"><input type="text" name="name" placeholder="User Name"></div>
+                  <div class="col-sm col-12"><input type="text" name="name" value="{{ old('name') }}" placeholder="User Name"></div>
                   @error('name')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
@@ -53,21 +53,21 @@
                 
                 <div class="row">
                   <div class="col-12"><label>Email Address</label></div>
-                  <div class="col-12"><input type="email" name="email" placeholder="Email Address"></div>
+                  <div class="col-12"><input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address"></div>
                   @error('email')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="row">
                   <div class="col-12"><label>New Password</label></div>
-                  <div class="col-12"><input type="password" name="password" placeholder="New Password"></div>
+                  <div class="col-12"><input type="password" name="password" value="{{ old('password') }}" placeholder="New Password"></div>
                   @error('password')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="row">
                   <div class="col-12"><label>Comfirm Password</label></div>
-                  <div class="col-12"><input type="password" name="password_confirmation" placeholder="Comfirm Password"></div>
+                  <div class="col-12"><input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Comfirm Password"></div>
                 </div>
                 <div class="row">
                   <div class="col-12"><input type="submit" name="SEND" value="SIGN UP"></div>

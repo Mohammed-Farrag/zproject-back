@@ -54,17 +54,35 @@
 
 @script
 <script>
-    $wire.on('productAddedToCart', (product) => {
+    $wire.on('productAddedToCart', (data) => {
+        const product = data[0].product;
+        const user = data[0].user_data;
+
         let cart = JSON.parse(localStorage.getItem('cart'))
         cart = {
             ...cart,
-            [product[0].id]: product
+            [product.id]: product
         }
+
+        
+        localStorage.setItem('userData', JSON.stringify(user));
         localStorage.setItem('cart', JSON.stringify(cart));
         $.toast({
             text: "Your product has been added to the cart",
             bgColor : "#fff",
             textColor : "#000",
+            loader: false
+        })
+
+    });
+
+
+
+    $wire.on('NoAuthAlert', () => {
+        $.toast({
+            text: "You must login first to add to cart",
+            bgColor : "#f00",
+            textColor : "#fff",
             loader: false
         })
 
