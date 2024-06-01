@@ -12,9 +12,10 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Ratinf</th>
+                            <th>Rating</th>
                             <th>Comment</th>
                             <th>User</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,7 +25,9 @@
                             <td>{{ $rev->rating }} </td>
                             <td>{{ $rev->comment }} </td>
                             <td>{{ $rev->user->name }} </td>
-        
+                            <td>
+                                <a href="{{ route('reviews.delete' , ['id' => $rev->id]) }}" class="btn btn-primary">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
