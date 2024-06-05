@@ -22,7 +22,7 @@
 
                         @foreach ($revs as $rev )
                         <tr>
-                            <td>{{ $rev->rating }} </td>
+                            <td>{{ $rev->rating }} <i class="fa-solid fa-star"></i> </td>
                             <td>{{ $rev->comment }} </td>
                             <td>{{ $rev->user->name }} </td>
                             <td>

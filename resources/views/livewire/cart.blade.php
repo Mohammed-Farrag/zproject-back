@@ -4,6 +4,10 @@
  <!-- End product cart row -->
 
  <script>
+     
+
+
+
      function getCart() {
          document.getElementById('carttable').innerHTML = "";
          const cart = JSON.parse(localStorage.getItem('cart'));
@@ -20,7 +24,7 @@
                          </span>
                      </div>
                      <div class="col dtimg text-start">
-                     <span>${cart[i].name}</span>
+                     <span>${cart[i].title}</span>
                      <span>${cart[i].description}</span>
                      </div>
                  </div>
@@ -35,7 +39,7 @@
      
              <div class="col-2"> <span class="tbprice">${cart[i].price}$</span> </div>
              
-             <div class="col-2"> <span class="tbprice">${cart[i].price}</span></div>
+             <div class="col-2"> <span class="tbprice">${cart[i].price * cart[i].quantity}</span></div>
              
              <div class="col-1">
                  <span class="xicon" style="cursor:pointer"  onclick="x(${cart[i].id})">
@@ -56,6 +60,7 @@
          let cart = JSON.parse(localStorage.getItem('cart'));
          const cartItem = cart[id];
          cartItem.quantity++;
+
          cart = {
              ...cart,
              [id]: cartItem

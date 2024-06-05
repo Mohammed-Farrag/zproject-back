@@ -21,8 +21,6 @@
           xmlns="http://www.w3.org/2000/svg"
           className="grow"
           viewBox="0 0 24 24"
-          width={100}
-          height={100}
         >
           <g>
             <circle
@@ -86,20 +84,60 @@
     <div class="upmainproducts" wire:loading.remove wire:target="changeCategory">
         <div class="row">
             @foreach ($products as $product)
-            <a href="{{ route('home.product', $product->id) }}" class="col-lg-4 col-md-4 col-sm-6 col-12" >
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12" >
                 <div class="mainproduct">
-                    <div class="upimage">
+                    <a href="{{ route('product', $product->id) }}" class="upimage d-block">
                         <img src="{{ asset($product->image) }}" alt="image">
                         <span><i class="fa-regular fa-file-image"></i></span>
-                    </div>
+                    </a>
                     <div class="productdetails">
                         <h5>{{ $product->title }}</h5>
                         <span class="prodprice">{{ $product->price }}$</span>
-                        <span class="carticon"><i class="fa-solid fa-cart-plus"></i></span>
+                        <span class="carticon" wire:click="addToCart({{ $product->id }})"><i class="fa-solid fa-cart-plus"></i></span>
                     </div>
                 </div>
-            </a>
+            </div>
             @endforeach
         </div>
     </div>
 </div>
+
+
+
+@script
+<script>
+    $wire.on('productAddedToCart', (data) => {
+        const product = data[0].product;
+        const user = data[0].user_data;
+
+        let cart = JSON.parse(localStorage.getItem('cart'))
+        cart = {
+            ...cart,
+            [product.id]: product
+        }
+
+        
+        localStorage.setItem('userData', JSON.stringify(user));
+        localStorage.setItem('cart', JSON.stringify(cart));
+        $.toast({
+            text: "Your product has been added to the cart",
+            bgColor : "#fff",
+            textColor : "#000",
+            loader: false
+        })
+
+    });
+
+
+
+    $wire.on('NoAuthAlert', () => {
+        $.toast({
+            text: "You must login first to add to cart",
+            bgColor : "#f00",
+            textColor : "#fff",
+            loader: false
+        })
+
+    });
+</script>
+@endscript

@@ -46,28 +46,28 @@
                 <div class="col-lg-7 col-md-8 col-sm-12 col-12">
                     <ul>
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('home.about') }}">About</a></li>
-                        <li><a href="{{ route('home.gallery') }}">Gallery</a></li>
-                        <li><a href="{{ route('home.news') }}">News</a></li>
-                        <li><a href="{{ route('home.store') }}">Print store</a></li>
-                        <li><a href="{{ route('home.contact') }}">contact</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ route('news') }}">News</a></li>
+                        <li><a href="{{ route('store') }}">Print store</a></li>
+                        <li><a href="{{ route('contact') }}">contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-1 col-sm-12 col-12">
                     <div class="upaccount">
-                        <a href="{{ route('home.cart') }}"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+                        <a href="{{ route('cart') }}"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
                         @auth
-                        <a href="{{ route('home.logout') }}">
+                        <a href="{{ route('frontend.logout') }}">
                             <span>
-                                <form action="{{ route('home.logout') }}" method="POST">
+                                <form action="{{ route('frontend.logout') }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button>اخرج</button>
+                                    <button><i class="fa fa-sign-out" ></i></button>
                                 </form>
                             </span>
                         </a>
                         @else
-                        <a href="{{ route('home.signin') }}"><span><i class="fa-solid fa-user"></i></span></a>
+                        <a href="{{ route('signin') }}"><span><i class="fa-solid fa-user"></i></span></a>
                         @endauth
                     </div>
                 </div>

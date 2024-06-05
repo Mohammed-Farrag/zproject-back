@@ -38,10 +38,11 @@ class FrontendController extends Controller
 
     public function register(Request $request)
     {
+
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = User::create([

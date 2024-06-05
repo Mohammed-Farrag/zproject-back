@@ -6,18 +6,16 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\GalleriesController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ReviewsController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
 
 
 require 'frontend.php';
 
-Route::get('/',function() {
- 
-   Artisan::call('storage:link');
+
    
-   return view('app');
-});
+
+
 
 
 

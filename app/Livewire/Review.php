@@ -30,8 +30,9 @@ class Review extends Component
             
             $review->save();
             
-            $review->comment = '';
-            $review->rate = 0;
+            $this->comment = '';
+            $this->rate = 0;
+
 
             $this->dispatch('ReviewAdded');
 

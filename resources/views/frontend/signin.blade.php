@@ -41,7 +41,7 @@
           <div class="col-md col-sm-12 col-12">
             <div class="signsforms">
               <div class="uplogo"><img src="{{ asset('frontend/img/header-logo.png') }}" alt="image"></div>
-              <form action="{{ route('home.login') }}" method="POST">
+              <form action="{{ route('frontend.login') }}" method="POST">
                 @csrf
                 <div class="row">
                   <div class="col-12"><label>E-mail</label></div>
@@ -63,7 +63,7 @@
                 </div>
               </form>
               <div class="aftform">
-                <p>Already have an account? <a href="{{ route('home.signup') }}">Sign Up</a></p>
+                <p>Already have an account? <a href="{{ route('signup') }}">Sign Up</a></p>
                 <div class="forline"><span>OR</span></div>
                 <a class="orgoogle"><img src="{{ asset('frontend/img/googleicon.png') }}" alt="icon"> CONTINUE WITH GOOGLE ACCOUNT</a>
               </div>

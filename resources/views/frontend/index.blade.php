@@ -51,7 +51,7 @@
           <a href="#" class="socialicon"><span><i class="fa-brands fa-behance"></i></span></a>
           <a href="#" class="socialicon"><span><i class="fa-brands fa-x-twitter"></i></span></a>
           <a href="#" class="socialicon"><span><i class="fa-brands fa-facebook-f"></i></span></a>
-          <a href="{{ route('home.store') }}" class="enterbtn">ENTER</a>
+          <a href="{{ route('store') }}" class="enterbtn">ENTER</a>
         </div>
         <div class="uphomelogo"><img src="{{ asset('frontend/img/fidaapng.png') }}" alt="logo"></div>
       </div>

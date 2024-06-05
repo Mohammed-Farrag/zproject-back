@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist1/css/adminlte.min.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}" />
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -162,6 +164,10 @@
     <!-- JQVMap -->
     <script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js')}} "></script>
     <script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+
+    <!-- Font Awesome -->
+    <script src="{{ asset('frontend/js/all.min.js') }}"></script>
+    
     <!-- jQuery Knob Chart -->
     <script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
     <!-- daterangepicker -->

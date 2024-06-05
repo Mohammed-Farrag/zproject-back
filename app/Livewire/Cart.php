@@ -12,7 +12,6 @@ class Cart extends Component
 
 
     public function loadCart($cart){
-        dd($this->cart);
 
         $this->cart = $cart;
 

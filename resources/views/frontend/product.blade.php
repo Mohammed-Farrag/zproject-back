@@ -4,6 +4,7 @@
 
 
     @livewire('single-product', ['productId' => $product->id ])
+    @livewire('reviews-list', ['productId' => $product->id ])
 
     <!-- Start photaddreview -->
     <section class="photaddreview">
@@ -27,7 +28,7 @@
             <div class="row">
                 @foreach ($products as $p)
                     <!-- start product -->
-                    <a href="{{ route('home.product', $p->id) }}" class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
+                    <a href="{{ route('product', $p->id) }}" class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
                         <div class="mainproduct">
                             <div class="upimage">
                                 <img src="{{ asset($p->image) }}" alt="image">
