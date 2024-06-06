@@ -14,9 +14,6 @@
         <div class="row">
             <div class="col-12"><input type="email" name="email" wire:model="email" placeholder="Email Address"></div>
         </div>
-        <!-- <div class="row">
-            <div class="col-12"><input type="tel" name="" placeholder="Mobile Number"></div>
-        </div> -->
         <div class="row">
             <div class="col-12"><input type="text" name="title" wire:model="title" placeholder="Subject"></div>
         </div>

@@ -20,21 +20,16 @@ class ContactMail extends Component
     {
         if (Auth::check()) {
 
-            $title = $this->title;
-            $body = $this->body;
-            $email = $this->email;
-            $name = $this->name;
+           
 
-            $data = [
-                'name' => $name,
-                'title' => $title,
-                'email' => $email,
-                'body' => $body
-            ];
-
-            Mail::to('mohammedfarrag633@gmail.com')->send(new MailContactMail($data));
+            Mail::to('memothetop633@gmail.com')->send(new MailContactMail($this->name, $this->email, $this->title, $this->body));
 
             $this->dispatch('MailSended');
+
+            $this->name = "";
+            $this->email = "";
+            $this->title = "";
+            $this->body = "";
 
         } else {
             

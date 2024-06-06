@@ -14,14 +14,20 @@ class ContactMail extends Mailable
     use Queueable, SerializesModels;
 
 
-    public $data;
+    public $name;
+    public $email;
+    public $title;
+    public $body;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($data)
+    public function __construct($name, $email, $title, $body)
     {    
-        $this->data = $data;
+        $this->name = $name;
+        $this->email = $email;
+        $this->title = $title;
+        $this->body = $body;
     }
 
     /**
@@ -40,7 +46,13 @@ class ContactMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.contact'
+            view: 'mail.contact',
+            with: [
+                'email' =>  $this->email,
+                'name' =>  $this->name,
+                'title' =>  $this->title,
+                'body' =>  $this->body
+            ]
         );
     }
 

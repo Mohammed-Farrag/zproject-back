@@ -8,8 +8,18 @@ class CountDown extends Component
 {
 
     public $date;
-    public function mount($date){
+    public $image;
+    public function mount($date, $image)
+    {
         $this->date = $date;
+        $this->image = $image;
+
+        $this->dispatch(
+            'date',
+            [
+                'date' => $this->date
+            ]
+        );
     }
     public function render()
     {

@@ -4,7 +4,10 @@
     <title>Email Example</title>
 </head>
 <body>
-    <h1>{{ $data['title'] }}</h1>
-    <p>{{ $data['body'] }}</p>
+    <h1>Hello</h1>
+    <h2>This mail from {{ $email }}</h2>
+
+    <h2>Title: {{ $title }}</h2>
+    <p>Message: {{  $body   }}</p>
 </body>
 </html>

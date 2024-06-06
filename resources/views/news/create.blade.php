@@ -38,10 +38,11 @@
                 <label>Image</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input">
+                        <input type="file" name="image" class="custom-file-input" id="custom-file-input">
                         <label class="custom-file-label">Choose file</label>
                     </div>
                 </div>
+                <span id="fileNameDisplay"></span>
             </div>
 
         </div>
@@ -54,3 +55,23 @@
 </div>
 
 @endsection
+
+
+@push('scripts')
+
+<script>
+    let file = document.getElementById('custom-file-input');
+    let display = document.getElementById('fileNameDisplay');
+
+    file.addEventListener('change', (e) => {
+        const fileInput = e.target;
+        if (fileInput.files.length > 0) {
+            const fileName = fileInput.files[0].name;
+            fileNameDisplay.textContent = `Selected file: ${fileName}`;
+        } else {
+            fileNameDisplay.textContent = '';
+        }
+    })
+</script>
+
+@endpush
