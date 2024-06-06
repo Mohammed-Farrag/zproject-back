@@ -6,22 +6,20 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\GalleriesController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ReviewsController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
 
 
 require 'frontend.php';
 
-Route::get('/',function() {
- 
-   Artisan::call('storage:link');
+
    
-   return view('app');
-});
 
 
 
-Route::prefix('/dashboard')->group(function () {
+
+
+Route::prefix('/admin')->group(function () {
 
 
     Route::middleware(['adminAuthCheck'])->group(function () {
@@ -40,9 +38,12 @@ Route::prefix('/dashboard')->group(function () {
         Route::prefix('/galleries')->group(function () {
             Route::get('/', [GalleriesController::class, 'index'])->name('galleries.index');
             Route::get('/show', [GalleriesController::class, 'show'])->name('galleries.show');
+            Route::post('/add/{id}', [GalleriesController::class, 'add'])->name('galleries.add');
+            Route::get('/delete/{id}', [GalleriesController::class, 'deleteImage'])->name('galleries.delete-image');
             Route::view('/create', 'galleries.create')->name('galleries.create');
             Route::post('/store', [GalleriesController::class, 'store'])->name('galleries.store');
-            Route::view('/update', 'galleries.update')->name('galleries.update');
+            Route::get('/edit/{id}',  [GalleriesController::class, 'edit'])->name('galleries.edit');
+            Route::put('/update/{id}',[GalleriesController::class, 'update'])->name('galleries.update');
             Route::get('/delete', [GalleriesController::class, 'delete'])->name('galleries.delete');
         });
         

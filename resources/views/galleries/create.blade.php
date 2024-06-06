@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label>Text</label>
-                <input type="text" name="title" class="form-control">
+                <input type="text" name="title"  class="form-control">
             </div>
         
 

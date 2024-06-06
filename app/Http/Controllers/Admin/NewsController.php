@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        $news = NewModel::paginate(6);
+        $news = NewModel::with('category')->get();
         
         return view('news.index', compact('news'));
     }
@@ -35,17 +35,22 @@ class NewsController extends Controller
         $new->active = true;
         response()->json(['success' => true, 'message' => 'set To active']);
     }
+
+
+
     public function store(Request $req){
 
         $new = new NewModel();
-        $new->title = $req->title;
-        $new->days = $req->days;
-        $new->hours = $req->hours;
-        $new->minutes = $req->minutes;
-        $new->seconds = $req->seconds;
-        $new->image = Storage::putFileAs('news', $req->file('image') , time() . $req->file('image')->getClientOriginalName() );
+        $new->slug = $req->title;
+        $new->soon = $req->soon;
+        if ($req->hasFile('image')) {
+
+            $img = $req->file('image');
+            $img->move(public_path('news'), $img->getClientOriginalName());
+            $path = url('/news/' .  $img->getClientOriginalName());
+            $new->image = $path;
+        }
         $new->category_id = $req->category_id;
-        $new->slug = Str::slug($req->text);
 
         $new->save();
 

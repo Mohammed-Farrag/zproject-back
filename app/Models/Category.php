@@ -15,6 +15,6 @@ class Category extends Model
 
 
     public function news(){
-        return $this->hasMany(NewModel::class);
+        return $this->hasMany(NewModel::class, 'category_id');
     }
 }

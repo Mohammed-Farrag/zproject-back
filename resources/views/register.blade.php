@@ -44,7 +44,7 @@
         </form>
     
     </div>
-    <a href="/dashboard/login">Login from here</a>
+    <a href="/admin/login">Login from here</a>
 
 
 </div>

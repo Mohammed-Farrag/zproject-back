@@ -15,9 +15,10 @@ class AdminAleadyLoggedin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if( Session()->has('adminId') && ( url('dashboard/login') == $request->url() ||  url('dashboard/register') == $request->url())){
+        // dd($request->url());
+        if( Session()->has('adminId') && ( url('admin/login') == $request->url() ||  url('admin/register') == $request->url())){
             
-            return redirect('/dashboard');
+            return redirect('/admin');
         }
         return $next($request);
     }

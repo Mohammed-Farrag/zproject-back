@@ -36,7 +36,7 @@
             </div>
         </form>
     </div>
-    <a href="/dashboard/register">Regsiter from here</a>
+    <a href="/admin/register">Regsiter from here</a>
 
 
 </div>

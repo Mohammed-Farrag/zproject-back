@@ -18,20 +18,8 @@
             <div class="form-group">
                 <div class="input-group date row" >
                     <div class="form-group col-3">
-                        <label>Days</label>
-                        <input type="number" name="days" class="form-control">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Hours</label>
-                        <input type="number" name="hours" class="form-control">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Minutes</label>
-                        <input type="number" name="minutes" class="form-control">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Seconds</label>
-                        <input type="number" name="seconds" class="form-control">
+                        <label>Soon</label>
+                        <input type="date" name="soon" class="form-control">
                     </div>
                 </div>
             </div>

@@ -12,9 +12,11 @@
         </div>
         <div class="row">
           @foreach ($galleries as $gallery)
-            <div class="col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
+            <div 
+              class="col-md-4 col-sm-6 col-12" 
+              data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
               <div class="gallerybox">
-                <img src="{{ asset($gallery->images->first()->path) }}" alt="image">
+                <img src="{{ $gallery->thumbnail }}" alt="image">
                 <div class="boxoverlay">
                   <a href="#">{{ $gallery->title }}</a>
                 </div>

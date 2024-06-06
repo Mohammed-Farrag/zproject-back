@@ -1,25 +1,31 @@
 <?php
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('home', 'frontend.index')->name('home');
-// Route::view('home/store', 'frontend.store')->name('home.store');
-Route::view('home/about', 'frontend.about')->name('home.about');
-Route::get('home/gallery', [FrontendController::class, 'gallery'])->name('home.gallery');
-Route::view('home/news', 'frontend.news')->name('home.news');
-Route::get('home/products', [FrontendController::class, 'print_store'])->name('home.store');
-Route::view('home/contact', 'frontend.contact')->name('home.contact');
-Route::view('home/cart', 'frontend.cart')->name('home.cart');
-Route::get('home/product/{id}', [FrontendController::class, 'product'])->name('home.product');
+    
+
+
+
+
+Route::view('/', 'frontend.index')->name('home');
+Route::view('about', 'frontend.about')->name('about');
+Route::get('gallery', [FrontendController::class, 'gallery'])->name('gallery');
+Route::get('new', [FrontendController::class, 'news'])->name('news');
+Route::get('store', [FrontendController::class, 'print_store'])->name('store');
+
+Route::view('contact', 'frontend.contact')->name('contact');
+Route::view('cart', 'frontend.cart')->name('cart');
+Route::get('product/{id}', [FrontendController::class, 'product'])->name('product');
 
 Route::middleware('guest')->group(function () {
-    Route::view('home/signin', 'frontend.signin')->name('home.signin');
-    Route::view('home/signup', 'frontend.signup')->name('home.signup');
-    Route::post('home/login', [FrontendController::class, 'login'])->name('home.login');
-    Route::post('home/register', [FrontendController::class, 'register'])->name('home.register');
+    Route::view('signin', 'frontend.signin')->name('signin');
+    Route::view('signup', 'frontend.signup')->name('signup');
+    Route::post('front/login', [FrontendController::class, 'login'])->name('frontend.login');
+    Route::post('front/register', [FrontendController::class, 'register'])->name('frontend.register');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::delete('home/logout', [FrontendController::class, 'logout'])->name('home.logout');
+    Route::delete('front/logout', [FrontendController::class, 'logout'])->name('frontend.logout');
 });

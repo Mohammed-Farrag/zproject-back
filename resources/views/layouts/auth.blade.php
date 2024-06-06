@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist1/css/adminlte.min.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}" />
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -109,13 +111,13 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
                                     Orders
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <a class="mt-auto w-100 d-block mt-auto" href="{{route('logout')  }}">logout</a>
@@ -162,6 +164,10 @@
     <!-- JQVMap -->
     <script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js')}} "></script>
     <script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+
+    <!-- Font Awesome -->
+    <script src="{{ asset('frontend/js/all.min.js') }}"></script>
+    
     <!-- jQuery Knob Chart -->
     <script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
     <!-- daterangepicker -->
@@ -179,6 +185,8 @@
     <script src="{{ asset('dist1/js/demo.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist1/js/pages/dashboard.js')}}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

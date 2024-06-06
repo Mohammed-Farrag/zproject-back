@@ -41,11 +41,11 @@
           <div class="col-md col-sm-12 col-12">
             <div class="signsforms">
               <div class="uplogo"><img src="{{ asset('frontend/img/header-logo.png') }}" alt="image"></div>
-              <form action="{{ route('home.register') }}" method="POST">
+              <form action="{{ route('frontend.register') }}" method="POST">
                 @csrf
                 <div class="row">
                   <div class="col-12"><label>User Name</label></div>
-                  <div class="col-sm col-12"><input type="text" name="name" placeholder="User Name"></div>
+                  <div class="col-sm col-12"><input type="text" name="name" value="{{ old('name') }}" placeholder="User Name"></div>
                   @error('name')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
@@ -53,28 +53,28 @@
                 
                 <div class="row">
                   <div class="col-12"><label>Email Address</label></div>
-                  <div class="col-12"><input type="email" name="email" placeholder="Email Address"></div>
+                  <div class="col-12"><input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address"></div>
                   @error('email')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="row">
                   <div class="col-12"><label>New Password</label></div>
-                  <div class="col-12"><input type="password" name="password" placeholder="New Password"></div>
+                  <div class="col-12"><input type="password" name="password" value="{{ old('password') }}" placeholder="New Password"></div>
                   @error('password')
                       <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="row">
                   <div class="col-12"><label>Comfirm Password</label></div>
-                  <div class="col-12"><input type="password" name="password_confirmation" placeholder="Comfirm Password"></div>
+                  <div class="col-12"><input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Comfirm Password"></div>
                 </div>
                 <div class="row">
                   <div class="col-12"><input type="submit" name="SEND" value="SIGN UP"></div>
                 </div>
               </form>
               <div class="aftform">
-                <p>Already have an account? <a href="{{ route('home.signin') }}">Login</a></p>
+                <p>Already have an account? <a href="{{ route('signin') }}">Login</a></p>
                 <div class="forline"><span>OR</span></div>
                 <a class="orgoogle"><img src="{{ asset('frontend/img/googleicon.png') }}" alt="icon"> CONTINUE WITH GOOGLE ACCOUNT</a>
               </div>
