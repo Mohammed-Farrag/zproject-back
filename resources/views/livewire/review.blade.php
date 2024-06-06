@@ -9,12 +9,6 @@
     </div>
     <form wire:submit="save" wire:loading.remove wire:target="save">
         @csrf
-        <!-- <div>
-            <input type="text" wire:model="name" placeholder="Your Name">
-        </div>
-        <div>
-            <input type="email" wire:model="email" placeholder="Your Email">
-        </div> -->
         <div>
             <textarea wire:model="comment" placeholder="Your Comment" rows="6"></textarea>
         </div>

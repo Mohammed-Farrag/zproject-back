@@ -185,6 +185,8 @@
     <script src="{{ asset('dist1/js/demo.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist1/js/pages/dashboard.js')}}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

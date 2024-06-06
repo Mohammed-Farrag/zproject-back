@@ -40,33 +40,10 @@
     <!-- Start photcontactform -->
     <section class="photcontactform">
       <div class="container">
-        <div class="upformcontact" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          <form>
-            <div class="row">
-              <!-- <div class="col-12"><label>Name</label></div> -->
-              <div class="col-sm col-12"><input type="text" name="" placeholder="Your Name"></div>
-            </div>
-            <div class="row">
-              <!-- <div class="col-12"><label>Email Address</label></div> -->
-              <div class="col-12"><input type="email" name="" placeholder="Email Address"></div>
-            </div>
-            <div class="row">
-              <!-- <div class="col-12"><label>Mobile Number</label></div> -->
-              <div class="col-12"><input type="tel" name="" placeholder="Mobile Number"></div>
-            </div>
-            <div class="row">
-              <!-- <div class="col-12"><label>Subject</label></div> -->
-              <div class="col-12"><input type="text" name="" placeholder="Subject"></div>
-            </div>
-            <div class="row">
-              <!-- <div class="col-12"><label>Message</label></div> -->
-              <div class="col-12"><textarea name="" placeholder="Message" rows="6"></textarea></div>
-            </div>
-            <div class="row">
-              <div class="col-12"><input type="submit" name="SEND" value="SEND"></div>
-            </div>
-          </form>
-        </div>
+      
+
+        @livewire('contact-mail')
+        
       </div>
     </section>
     <!-- End photcontactform -->
