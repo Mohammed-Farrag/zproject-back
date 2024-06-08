@@ -48,38 +48,38 @@
 
 @push('scripts')
 
-<script>
-    let thumb = document.getElementById('custom-file-thumbnail');
-    let thumbDisplay = document.getElementById('thmbNameDisplay');
+    <script>
+        let thumb = document.getElementById('custom-file-thumbnail');
+        let thumbDisplay = document.getElementById('thmbNameDisplay');
 
 
-    thumb.addEventListener('change', (e) => {
-        const fileInput = e.target;
-        if (fileInput.files.length > 0) {
-            const fileName = fileInput.files[0].name;
-            thumbDisplay.textContent = `Selected file: ${fileName}`;
-        } else {
-            thumbDisplay.textContent = '';
-        }
-    });
-
-
-    let file = document.getElementById('custom-file-input');
-    let display = document.getElementById('fileNameDisplay');
-
-    file.addEventListener('change', (e) => {
-        const fileInput = e.target;
-
-        if(fileInput.files.length > 0){
-
-            for (let i = 0; i < fileInput.files.length; i++) {
-                display.textContent += `${fileInput.files[i].name} , `;
+        thumb.addEventListener('change', (e) => {
+            const fileInput = e.target;
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                thumbDisplay.textContent = `Selected file: ${fileName}`;
+            } else {
+                thumbDisplay.textContent = '';
             }
-        } else {
-            display.textContent =  '';
-        }
+        });
 
-    })
-</script>
+
+        let file = document.getElementById('custom-file-input');
+        let display = document.getElementById('fileNameDisplay');
+
+        file.addEventListener('change', (e) => {
+            const fileInput = e.target;
+
+            if(fileInput.files.length > 0){
+
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    display.textContent += `${fileInput.files[i].name} , `;
+                }
+            } else {
+                display.textContent =  '';
+            }
+
+        })
+    </script>
 
 @endpush
