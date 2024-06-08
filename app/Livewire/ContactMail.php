@@ -22,7 +22,7 @@ class ContactMail extends Component
 
            
 
-            Mail::to('memothetop633@gmail.com')->send(new MailContactMail($this->name, $this->email, $this->title, $this->body));
+            Mail::to('Fidaasaied.007@gmail.com')->send(new MailContactMail($this->name, $this->email, $this->title, $this->body));
 
             $this->dispatch('MailSended');
 

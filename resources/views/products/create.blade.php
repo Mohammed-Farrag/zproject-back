@@ -74,9 +74,9 @@
         const fileInput = e.target;
         if (fileInput.files.length > 0) {
             const fileName = fileInput.files[0].name;
-            fileNameDisplay.textContent = `Selected file: ${fileName}`;
+            display.textContent = `Selected file: ${fileName}`;
         } else {
-            fileNameDisplay.textContent = '';
+            display.textContent = '';
         }
     })
 </script>

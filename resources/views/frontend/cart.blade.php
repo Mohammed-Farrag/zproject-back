@@ -49,7 +49,7 @@
         cartArr.push(pro[1]);
       })
 
-      let url = 'https://wa.me/' + '+201094848584' + '?text=' + message;
+      let url = 'https://wa.me/' + '+972545250411' + '?text=' + message;
       window.open(url, '_blank');
       console.log(cartArr);
     });

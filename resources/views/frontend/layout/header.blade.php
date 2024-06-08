@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
     @stack('styles')
@@ -59,19 +59,19 @@
                 </div>
                 <div class="col-lg-2 col-md-1 col-sm-12 col-12">
                     <div class="upaccount">
-                        <a href="{{ route('cart') }}"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+                        <a href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
                         @auth
                         <a href="{{ route('frontend.logout') }}">
-                            <span>
-                                <form action="{{ route('frontend.logout') }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button><i class="fa fa-sign-out"></i></button>
-                                </form>
-                            </span>
+
+                            <form action="{{ route('frontend.logout') }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="anchor"><i class="fa fa-sign-out"></i></button>
+                            </form>
+
                         </a>
                         @else
-                        <a href="{{ route('signin') }}"><span><i class="fa-solid fa-user"></i></span></a>
+                        <a href="{{ route('signin') }}"><i class="fa-solid fa-user"></i></a>
                         @endauth
                     </div>
                 </div>

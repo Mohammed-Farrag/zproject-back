@@ -86,9 +86,9 @@
             @foreach ($products as $product)
             <div class="col-lg-4 col-md-4 col-sm-6 col-12" >
                 <div class="mainproduct">
-                    <a href="{{ route('product', $product->id) }}" class="upimage d-block">
+                    <a href="{{ route('product', $product->id) }}" class="upimage d-block" >
                         <img src="{{ asset($product->image) }}" alt="image">
-                        <span><i class="fa-regular fa-file-image"></i></span>
+                        <span data-fancybox data-src="{{ asset($product->image)  }}" data-caption="{{ $product->image }}"><i class="fa-regular fa-file-image"></i></span>
                     </a>
                     <div class="productdetails">
                         <h5>{{ $product->title }}</h5>

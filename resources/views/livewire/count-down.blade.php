@@ -1,4 +1,4 @@
-<div class="upimage">
+<div class="upimage" data-fancybox data-src="{{ $image  }}" data-caption="{{ $image }}">
     <img  src="{{ $image }}" id="countdown" alt="image">
     <div class="newstimer">
         <div class="row" >
