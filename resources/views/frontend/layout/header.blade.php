@@ -29,6 +29,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
     @stack('styles')
     <!-- Livewire Styles -->
     @livewireStyles
@@ -62,7 +66,7 @@
                                 <form action="{{ route('frontend.logout') }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button><i class="fa fa-sign-out" ></i></button>
+                                    <button><i class="fa fa-sign-out"></i></button>
                                 </form>
                             </span>
                         </a>

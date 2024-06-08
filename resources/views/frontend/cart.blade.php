@@ -20,7 +20,7 @@
           <h6>Price</h6>
         </div>
         <div class="col-2">
-          <h6>subtotal</h6>
+          <h6>Subtotal</h6>
         </div>
         <div class="col-1"></div>
       </div>

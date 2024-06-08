@@ -8,10 +8,10 @@
           </div>
           <div class="col-md-3 col-sm-6 col-6">
             <h6>Quick Links</h6>
-            <a href="#">About</a>
-            <a href="#">Gallery</a>
-            <a href="#">Print store</a>
-            <a href="#">News</a>
+            <a href="{{ route('about') }}">About</a>
+            <a href="{{ route('gallery') }}">Gallery</a>
+            <a href="{{ route('store') }}">Print store</a>
+            <a href="{{ route('news') }}">News</a>
           </div>
           <div class="col-md-3 col-sm-6 col-6">
             <h6>Contact Us</h6>
@@ -45,9 +45,15 @@
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js.map') }}"></script>
     <script src="{{ asset('frontend/js/myscript.js') }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script>
       AOS.init();
+      Fancybox.bind();
     </script>
+
+
 
     <!-- Livewire Scripts -->
     @livewireScripts
