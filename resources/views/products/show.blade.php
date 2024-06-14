@@ -32,7 +32,7 @@
                         </label>
 
                     </div>
-                    <div style="margin-top:auto">
+                    <div style="margin-top:80px">
                         <a href="{{ route('products.delete', ['id' => $product->id ]) }}" class="btn btn-primary">delete product</a>
                     </div>
 

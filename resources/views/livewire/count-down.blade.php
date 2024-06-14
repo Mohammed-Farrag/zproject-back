@@ -1,5 +1,8 @@
-<div class="upimage" data-fancybox data-src="{{ $image  }}" data-caption="{{ $image }}">
-    <img  src="{{ $image }}" id="countdown" alt="image">
+
+
+
+<div class="upimage" data-fancybox data-src="{{ $image  }}" data-caption="{{ $image }}" id="{{ $id }}" data-date="{{ $date }}">
+    <img  src="{{ $image }}" id="countdown"  alt="image" height="200px">
     <div class="newstimer">
         <div class="row" >
             <div class="col">
@@ -35,9 +38,8 @@
 
 @script
 <script>
+    
     $wire.on('date', (date) => {
-
-
         $(document).ready(function() {
             // Set the date we're counting down to
             var countDownDate = new Date(date[0].date).getTime();
@@ -45,6 +47,7 @@
             // Update the count down every 1 second
             var countdownfunction = setInterval(function() {
 
+                
                 // Get today's date and time
                 var now = new Date().getTime();
 
@@ -58,16 +61,25 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="countdown"
-                $("#days").text(days);
-                $("#hours").text(hours);
-                $("#minutes").text(minutes);
-                $("#seconds").text(seconds);
+                $(`#${date[0].id} #days`).text(days);
+                $(`#${date[0].id} #hours`).text(hours);
+                $(`#${date[0].id} #minutes`).text(minutes);
+                $(`#${date[0].id} #seconds`).text(seconds);
 
+                
+                if(date[0].id == 6){
+
+                    if (distance >  0) {
+                        clearInterval(countdownfunction);
+                        $(`#${date[0].id} #countdown`).addClass('show');
+                        $(`#${date[0].id} .newstimer`).hide();
+                    }
+                }
                 // If the count down is over, write some text
                 if (distance < 0) {
                     clearInterval(countdownfunction);
-                    $("#countdown").addClass('show');
-                    $('.newstimer').hide();
+                    $(`#${date[0].id} #countdown`).addClass('show');
+                    $(`#${date[0].id} .newstimer`).hide();
                 }
             }, 1000);
         });

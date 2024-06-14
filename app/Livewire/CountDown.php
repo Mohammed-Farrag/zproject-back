@@ -9,15 +9,18 @@ class CountDown extends Component
 
     public $date;
     public $image;
-    public function mount($date, $image)
+    public $id;
+    public function mount($id, $date, $image, )
     {
+        $this->id = $id;
         $this->date = $date;
         $this->image = $image;
 
         $this->dispatch(
             'date',
             [
-                'date' => $this->date
+                'date' => $this->date,
+                'id' => $this->id
             ]
         );
     }

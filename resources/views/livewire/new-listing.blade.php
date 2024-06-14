@@ -33,7 +33,7 @@
             @foreach ($news as $new)
             <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="200">
                 <div class="newsproduct">
-                    @livewire('count-down', ['date' => $new->soon, 'image' => $new->image])
+                    @livewire('count-down', ['id' => $new->id, 'date' => $new->soon, 'image' => $new->image])
                     <div class="productdetails">
                         <h5>{{ $new->slug }}</h5>
                     </div>
